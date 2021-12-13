@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./App.css"
 import SearchBar from "./components/searchBar/searchBar.component";
 
@@ -8,10 +8,14 @@ function App() {
     console.log("clicked");
   }
 
+  useEffect(() => {
+    document.title = "Country Search App"
+  }, [])
+
   return (
     <div className="">
       <div className="text-center px-10">
-        <h1 className="text-2xl sm:text-3xl pt-8 text-gray-100 font-bold pb-5">Get quick info on any country of the world!</h1>
+        <h1 className="text-2xl sm:text-3xl pt-8 text-gray-200 font-bold pb-5">Get quick info on any country of the world!</h1>
       </div>
 
       <hr />
