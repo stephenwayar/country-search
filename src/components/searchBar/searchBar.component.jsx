@@ -6,6 +6,7 @@ const SearchBar = () => {
 
   const [input, setInput] = useState("")
   const [allCountries, setAllCountries] = useState([])
+  const [res, setRes] = useState(false)
 
   const handleChange = e => {
     setInput(e.target.value)
@@ -24,7 +25,13 @@ const SearchBar = () => {
     .filter(country => country.name.common
       .toLowerCase()
       .includes(input
-        .toLowerCase()))
+        .toLowerCase()) 
+        || 
+      country.name.official
+        .toLowerCase()
+        .includes(input
+          .toLowerCase()) 
+    )
     .map((filtered, index) => 
     (
       <Country 
@@ -45,29 +52,36 @@ const SearchBar = () => {
   let notFound = ""
   let manyMatches = ""
 
-  if(filteredResult.length > 0 && filteredResult.length < 11) {
+  if(filteredResult.length > 0 && filteredResult.length < 16) {
     result = filteredResult
   }
   else if(input === ""){
     result = ""
   }
   else if(filteredResult.length > 11){
-    manyMatches = "Too many matches, specify another query"
+    manyMatches = "Too many matches! specify another query."
   }
   else if (input !== filteredResult){
-    notFound = "Country not found"
+    notFound = "Country not found!"
   }
     
   return(
     <div>
-      <input
+      <div className="flex justify-center">
+        <input className="placeholder:italic placeholder:text-gray-500 block w-40% border border-gray-300 rounded-3xl py-2 pl-6 pr-2 focus:outline-none focus:border-white focus:ring-white focus:ring-1 sm:text-sm" placeholder="Search any country..."
         type="text"
         value={input}
         onChange={handleChange}
-      />
-      <p>{result}</p>
-      <p className="text-orange-500">{manyMatches}</p>
-      <p className="text-red-500">{notFound}</p>
+        />
+      </div>
+      <h1 className="text-center text-gray-100">{res ? "Results Found" : ""}</h1>
+      
+      <div>
+        {result}
+      </div>
+      
+      <p className="text-yellow-600 font-semibold text-center pt-10 text-lg font-mono">{manyMatches}</p>
+      <p className="text-red-600 font-semibold text-center pt-5 text-lg font-mono">{notFound}</p>
     </div>
   )
 }
