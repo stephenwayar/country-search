@@ -14,7 +14,7 @@ const Country = (
     }
   ) => {
   return(
-    <div className="sm:w-7/12 md:w-6/12 lg:w-4/12 xl:w-3/12 shadow-[#5c5a5a] shadow-lg rounded-3xl m-auto w-60 mt-5 bg-white">
+    <div className="sm:w-7/12 md:w-6/12 lg:w-4/12 xl:w-3/12 dark:shadow-[#5c5a5a] shadow-2xl dark:shadow-lg rounded-3xl m-auto w-60 mt-5 bg-white">
 
       <div className="w-full">
         <img className="h-28 sm:h-40 w-full  rounded-t-3xl" alt="Country Flag" src={flags.flags.png ? flags.flags.png : "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"}/>

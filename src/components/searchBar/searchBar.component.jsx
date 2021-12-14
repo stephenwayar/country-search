@@ -67,8 +67,8 @@ const SearchBar = () => {
     
   return(
     <div>
-      <div className="flex justify-center">
-        <input className="placeholder:italic placeholder:text-gray-500 block w-40% border border-gray-300 rounded-3xl py-2 pl-6 pr-2 focus:outline-none focus:border-white focus:ring-white focus:ring-1 sm:text-sm" placeholder="Search any country..."
+      <div className="flex justify-center ">
+        <input className="shadow-2xl placeholder:italic placeholder:text-gray-500 block w-40% border border-gray-300 rounded-3xl py-2 pl-6 pr-2 focus:outline-none focus:border-white focus:ring-gray-900 dark:focus:ring-white dark:shadow-[#8b8787] dark:shadow-lg focus:ring-1 sm:text-sm" placeholder="Search any country..."
         type="text"
         value={input}
         onChange={handleChange}
