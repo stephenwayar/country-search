@@ -6,7 +6,7 @@ const SearchBar = () => {
 
   const [input, setInput] = useState("")
   const [allCountries, setAllCountries] = useState([])
-  const [res, setRes] = useState(false)
+  const [res] = useState(false)
 
   const handleChange = e => {
     setInput(e.target.value)
